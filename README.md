@@ -1,63 +1,49 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <img src="assets/banner-light.svg" alt="jack — data scientist · I build autonomous systems and keep them alive in production" width="880">
+  <img src="assets/banner-light.svg" alt="Jack McColm — data scientist" width="880">
 </picture>
 
-I build **agentic systems with deterministic rails** — an LLM proposes, fail-closed code disposes — and then I live with the consequences: my trading system runs my money and my health system runs my training. Data science background; production-operations habits.
+Hi, I'm Jack. I studied data science at UC Santa Barbara, and since graduating I've built AI agents, data pipelines, and CRM automation for companies in insurance, lending, and healthcare. On my own time I build autonomous systems and run them for real: one trades my money, one plans my training.
 
----
+## Running live
 
-## Two systems, running live
-
-### 🟢 blingbot — autonomous cross-venue trading
+### blingbot — autonomous trading
 
 ![live](https://img.shields.io/badge/live-since_Jun_2026-3fb950?style=flat-square)
 ![tests](https://img.shields.io/badge/tests-1%2C679-58a6ff?style=flat-square)
 ![venues](https://img.shields.io/badge/venues-Robinhood_%2B_Polymarket_US-8b949e?style=flat-square)
 ![source](https://img.shields.io/badge/source-private-30363d?style=flat-square)
 
-Continuous LLM research proposes trades across US equities and CFTC-regulated prediction markets; deterministic, fail-closed rails do all sizing, gating, and execution. Live with real capital since June 2026 — which means the interesting work is operational: loss breakers, broker reconciliation, an append-only audit trail, replay-backed strategy changes (nothing ships on vibes), a self-curating trading universe, and watchdogs that survive the host machine literally powering itself off overnight.
+An agentic trading system running on Robinhood and Polymarket US. An LLM does continuous research and proposes trades; deterministic code does all of the sizing, risk checks, and order execution. It has traded a real account without a human in the loop since June 2026. Most of the work turned out to be the unglamorous part: loss breakers, broker reconciliation, an append-only audit log, and replaying every strategy change against recorded history before it ships.
 
-*Source is private because it trades a real account — I'm happy to walk through the architecture, the post-mortems, and the experiments that didn't survive.*
+The code is private because it trades a live account. Ask me about the architecture, or about the post-mortems — those are the good stories.
 
-### 🟢 healthybot — athletic intelligence
+### healthybot — training intelligence
 
 ![live](https://img.shields.io/badge/live-daily-3fb950?style=flat-square)
 ![tests](https://img.shields.io/badge/tests-240-58a6ff?style=flat-square)
 ![data](https://img.shields.io/badge/data-Garmin_%2B_DEXA-8b949e?style=flat-square)
 
-Turns Garmin wearable data, BodySpec DEXA scans, training logs, and sleep data into daily coaching. Deterministic analysis engines compute readiness, training load, and sleep quality; an LLM orchestrator narrates and answers questions but never invents a number. Same design creed as blingbot, pointed at my body instead of my portfolio.
+I rowed varsity crew at UCSB, and healthybot is the coach I wish I'd had. It pulls Garmin wearable data, DEXA scans, sleep, and training logs into daily readiness and training-load analysis. The numbers come from deterministic engines; an LLM explains them and answers questions, but never invents them.
 
----
+## Where blingbot came from
 
-## How blingbot got here
-
-blingbot is the survivor of a deliberate research funnel — two earlier systems whose job was to kill bad ideas cheaply:
+Before blingbot went live, I built two research systems to find out what actually works: **robinbot** ran equity factor studies with out-of-sample discipline, and **polybot** tested prediction-market strategies against placebo controls. Most of what they found was that popular edges don't survive honest testing — copy-trading, cross-venue arbitrage, and wallet-skill signals all came out smaller than the trading costs to harvest them. The methods that survived that gauntlet are what blingbot runs today.
 
 ```mermaid
 graph LR
-    R["robinbot<br/>equities research<br/><i>contract-first design, factor studies</i>"] --> B
-    P["polybot<br/>prediction-market research<br/><i>placebo-controlled edge studies</i>"] --> B
-    B["blingbot<br/><b>live production system</b><br/><i>the ideas that survived</i>"]
+    R["robinbot<br/>equity factor research"] --> B
+    P["polybot<br/>prediction-market research"] --> B
+    B["blingbot<br/><b>live production system</b>"]
 ```
 
-Most of what those systems found was **negative results, proven carefully**: copy-trading edges smaller than the spread that must be crossed, cross-venue "arbitrage" that was structural rather than mispriced, apparent skill that dissolved under signless placebo controls. The methodology — out-of-sample discipline, synthetic nulls, replay before deploy — is what actually graduated to production.
+## Also building
 
----
+- **reachy-mini** — desk-robot experiments with a Reachy Mini, including a build that reacts to incoming RingCentral calls through a Cloudflare Workers relay.
+- **jarvis** — a 3D solar-system dashboard where each of my projects is a planet with its own daemon reporting into Discord.
+- **socialbot** — a core for social automation where every outbound action has to pass deterministic safety gates and an audit log first.
+- **collegeessay.fun** — an AI essay-coaching platform: Express workspace, FastAPI agent service, deployed with docker-compose.
 
-## Also in the lab
+## Contact
 
-- 🤖 **reachy-mini** — physical robotics experiments with a Reachy Mini desk robot, including a call-reactive build: RingCentral events → Cloudflare Workers relay → robot reactions, outbound-HTTPS-only with no customer data touched.
-- 🪐 **jarvis / OLYMPUS-OS** — a 3D-orrery command center where each of my projects is a planet with its own daemon, reporting through a central orchestrator into Discord.
-- 🛡️ **socialbot** — a safety-gated core for social automation: every outbound action passes deterministic gates and an append-only audit log before any platform adapter fires.
-- 📝 **collegeessay.fun** — an AI essay-coaching platform: Express workspace + FastAPI agent service, shipped as a docker-compose stack behind a Cloudflare tunnel.
-
-## Operating principles
-
-1. **The LLM proposes; deterministic code disposes.** Language models never touch money, health advice, or the outside world without a fail-closed gate in between.
-2. **Replay before deploy.** Strategy and behavior changes are backtested against recorded history before they go live.
-3. **Measure or kill.** Every feature carries a ledger; anything that can't prove its edge gets paused, shadowed, or deleted — and I write the post-mortem either way.
-
----
-
-📫 **jackmdj02@gmail.com**
+**jackmdj02@gmail.com** · [linkedin.com/in/jackmdj](https://www.linkedin.com/in/jackmdj)
