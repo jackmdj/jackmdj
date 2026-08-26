@@ -1,48 +1,41 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <img src="assets/banner-light.svg" alt="Jack McColm — data scientist" width="880">
+  <img src="assets/banner-light.svg" alt="Jack McColm, data scientist, UC Santa Barbara" width="880">
 </picture>
 
-Hi, I'm Jack. I studied data science at UC Santa Barbara, and since graduating I've built AI agents, data pipelines, and CRM automation for companies in insurance, lending, and healthcare. On my own time I build autonomous systems and run them for real: one trades my money, one plans my training.
+I studied data science at UC Santa Barbara, then spent two years building AI agents, data pipelines, and CRM automation for companies in insurance, lending, and healthcare. Outside of work I build systems that run without me: a trading system with its own account, a training coach that reads my workout data, and, most recently, a desk robot.
+
+## Current work: Reachy Mini
+
+There is a [Reachy Mini](https://www.pollen-robotics.com/reachy-mini/) on my desk and my current project is making it useful. The first shipped build ties it into a business phone system: an incoming RingCentral call fires a webhook to a Cloudflare Workers relay, and the robot reacts at the desk in real time. The relay is outbound-HTTPS-only and never touches call content or customer data, which is what makes it safe to run against a real phone stack. More behavior experiments are in progress.
 
 ## Running live
 
-### blingbot — autonomous trading
+### blingbot
 
-![live](https://img.shields.io/badge/live-since_Jun_2026-3fb950?style=flat-square)
-![tests](https://img.shields.io/badge/tests-1%2C679-58a6ff?style=flat-square)
-![venues](https://img.shields.io/badge/venues-Robinhood_%2B_Polymarket_US-8b949e?style=flat-square)
-![source](https://img.shields.io/badge/source-private-30363d?style=flat-square)
+<sub>Robinhood + Polymarket US · live since June 2026 · 1,679 tests · source private</sub>
 
-An agentic trading system running on Robinhood and Polymarket US. An LLM does continuous research and proposes trades; deterministic code does all of the sizing, risk checks, and order execution. It has traded a real account without a human in the loop since June 2026. Most of the work turned out to be the unglamorous part: loss breakers, broker reconciliation, an append-only audit log, and replaying every strategy change against recorded history before it ships.
+An agentic trading system that has run a real account without a human in the loop since June 2026. An LLM does the research and proposes trades. Deterministic code decides sizing, applies risk limits, and places orders. Most of the codebase exists to keep it safe: loss breakers, broker reconciliation, an append-only audit log, and a replay harness that tests every change against recorded history before it goes live.
 
-The code is private because it trades a live account. Ask me about the architecture, or about the post-mortems — those are the good stories.
+It grew out of two earlier research systems. robinbot ran equity factor studies with out-of-sample discipline, and polybot tested prediction-market strategies against placebo controls. Most of the popular edges failed those tests. Copy-trading, cross-venue arbitrage, and wallet-skill signals all measured smaller than the cost of trading them. What survived the testing is what runs today.
 
-### healthybot — training intelligence
+The source stays private because the account is real. The architecture and the post-mortems are things I enjoy talking about in person.
 
-![live](https://img.shields.io/badge/live-daily-3fb950?style=flat-square)
-![tests](https://img.shields.io/badge/tests-240-58a6ff?style=flat-square)
-![data](https://img.shields.io/badge/data-Garmin_%2B_DEXA-8b949e?style=flat-square)
+### healthybot
 
-I rowed varsity crew at UCSB, and healthybot is the coach I wish I'd had. It pulls Garmin wearable data, DEXA scans, sleep, and training logs into daily readiness and training-load analysis. The numbers come from deterministic engines; an LLM explains them and answers questions, but never invents them.
+<sub>Garmin + DEXA + training logs · 240 tests</sub>
 
-## Where blingbot came from
+I rowed varsity crew at UCSB, and this is the coach I wanted then. It pulls wearable data, DEXA scans, sleep, and training logs into daily readiness and training-load analysis. The numbers come from deterministic engines; an LLM explains them and answers questions, but never invents them.
 
-Before blingbot went live, I built two research systems to find out what actually works: **robinbot** ran equity factor studies with out-of-sample discipline, and **polybot** tested prediction-market strategies against placebo controls. Most of what they found was that popular edges don't survive honest testing — copy-trading, cross-venue arbitrage, and wallet-skill signals all came out smaller than the trading costs to harvest them. The methods that survived that gauntlet are what blingbot runs today.
+## Other projects
 
-```mermaid
-graph LR
-    R["robinbot<br/>equity factor research"] --> B
-    P["polybot<br/>prediction-market research"] --> B
-    B["blingbot<br/><b>live production system</b>"]
-```
+**jarvis**. A command center that renders my projects as planets in a 3D solar system. Each planet is backed by a daemon that watches its project and reports into Discord through a central orchestrator. Unfinished, deliberately over-built, and the place where I try infrastructure ideas before they reach the systems above.
 
-## Also building
+**socialbot**. An automation core built on one rule: no post, reply, follow, or delete reaches a platform until it passes deterministic safety gates and is written to an append-only audit log. The platform adapters are interchangeable; the gates are not.
 
-- **reachy-mini** — desk-robot experiments with a Reachy Mini, including a build that reacts to incoming RingCentral calls through a Cloudflare Workers relay.
-- **jarvis** — a 3D solar-system dashboard where each of my projects is a planet with its own daemon reporting into Discord.
-- **socialbot** — a core for social automation where every outbound action has to pass deterministic safety gates and an audit log first.
-- **collegeessay.fun** — an AI essay-coaching platform: Express workspace, FastAPI agent service, deployed with docker-compose.
+**collegeessay.fun**. An AI essay-coaching product. An Express workspace app and a FastAPI agent service that plans and edits alongside the student in Google Docs, deployed as a docker-compose stack behind a Cloudflare tunnel.
+
+**Fog prediction for UCSB Crew** ([research](https://github.com/jackmdj/fog_research), [app](https://github.com/jackmdj/fog_app)). Morning fog at Lake Cachuma cancels rowing practice, so I scraped weather stations and a live webcam, then trained PyTorch models to predict it the night before. My first end-to-end ML system.
 
 ## Contact
 

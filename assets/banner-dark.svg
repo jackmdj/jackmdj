@@ -1,35 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="200" viewBox="0 0 880 200" role="img" aria-label="Jack McColm — data scientist">
-  <defs>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#58a6ff"/>
-      <stop offset="1" stop-color="#7ee787"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0.15" cy="0" r="1">
-      <stop offset="0" stop-color="#1f6feb" stop-opacity="0.14"/>
-      <stop offset="0.6" stop-color="#1f6feb" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="190" viewBox="0 0 880 190" role="img" aria-label="Jack McColm, data scientist, UC Santa Barbara">
   <style>
-    .name { font: 700 46px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: url(#accent); }
-    .sub { font: 400 17px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #8b949e; }
-    .chip { fill: #161b22; stroke: #30363d; }
-    .chiptext { font: 500 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #c9d1d9; }
-    .dot { fill: #3fb950; animation: pulse 2.4s ease-in-out infinite; }
-    .dot2 { animation-delay: 1.2s; }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+    .eyebrow {
+      font: 500 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing: 0.32em; fill: #7d8590;
+    }
+    .name {
+      font: 400 50px 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+      fill: #ece7dc;
+    }
+    .trace {
+      fill: none; stroke: #c9924b; stroke-width: 1.5;
+      stroke-linejoin: round; stroke-linecap: round;
+      stroke-dasharray: 1100; stroke-dashoffset: 1100;
+      animation: draw 2.4s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+    }
+    .enddot {
+      fill: #c9924b; opacity: 0;
+      animation: appear 0.5s 2.7s forwards, breathe 3.2s 3.2s ease-in-out infinite;
+    }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes appear { to { opacity: 1; } }
+    @keyframes breathe { 50% { opacity: 0.3; } }
+    @media (prefers-reduced-motion: reduce) {
+      .trace { animation: none; stroke-dashoffset: 0; }
+      .enddot { animation: none; opacity: 1; }
+    }
   </style>
-  <rect width="880" height="200" rx="12" fill="#0d1117"/>
-  <rect width="880" height="200" rx="12" fill="url(#glow)"/>
-  <rect x="0.75" y="0.75" width="878.5" height="198.5" rx="11.25" fill="none" stroke="#30363d" stroke-width="1.5"/>
+  <rect width="880" height="190" fill="#0d1117"/>
 
-  <text class="name" x="40" y="82">Jack McColm</text>
-  <text class="sub" x="42" y="116">Data scientist · AI agents, data pipelines, and autonomous systems</text>
+  <text class="eyebrow" x="42" y="52">DATA SCIENTIST · UC SANTA BARBARA</text>
+  <text class="name" x="40" y="108">Jack McColm</text>
 
-  <rect class="chip" x="40" y="140" width="212" height="30" rx="15"/>
-  <circle class="dot" cx="58" cy="155" r="4"/>
-  <text class="chiptext" x="70" y="160">blingbot · trading live</text>
-
-  <rect class="chip" x="264" y="140" width="232" height="30" rx="15"/>
-  <circle class="dot dot2" cx="282" cy="155" r="4"/>
-  <text class="chiptext" x="294" y="160">healthybot · coaching daily</text>
+  <path class="trace" d="M0,152 H120 L132,140 L144,158 L158,134 L170,152 L182,146 L196,152 H310 L322,156 L332,124 L342,168 L352,148 L360,152 H480 C500,152 506,136 526,136 C546,136 550,152 570,152 C590,152 594,168 614,168 C634,168 638,152 658,152 H848"/>
+  <circle class="enddot" cx="858" cy="152" r="3.5"/>
 </svg>
