@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="270" viewBox="0 0 880 270" role="img" aria-label="terminal banner: jack — data scientist, builder of autonomous systems">
+  <style>
+    .bg { fill: #0d1117; }
+    .frame { fill: none; stroke: #30363d; stroke-width: 1.5; }
+    .bar { fill: #161b22; }
+    .t { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 16px; }
+    .prompt { fill: #3fb950; }
+    .cmd { fill: #e6edf3; }
+    .out { fill: #8b949e; }
+    .hi { fill: #58a6f5; }
+    .ok { fill: #3fb950; }
+    .title { fill: #8b949e; font-size: 13px; }
+    .cursor { fill: #e6edf3; animation: blink 1.1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .line { opacity: 0; animation: reveal 0.01s linear forwards; }
+    .l1 { animation-delay: 0.3s; } .l2 { animation-delay: 0.9s; }
+    .l3 { animation-delay: 1.7s; } .l4 { animation-delay: 2.4s; }
+    .l5 { animation-delay: 2.9s; } .l6 { animation-delay: 3.4s; }
+    @keyframes reveal { to { opacity: 1; } }
+  </style>
+  <rect class="bg" x="0" y="0" width="880" height="270" rx="12"/>
+  <rect class="bar" x="1" y="1" width="878" height="36" rx="11"/>
+  <rect class="bar" x="1" y="24" width="878" height="14"/>
+  <circle cx="24" cy="19" r="6" fill="#f85149"/>
+  <circle cx="46" cy="19" r="6" fill="#d29922"/>
+  <circle cx="68" cy="19" r="6" fill="#3fb950"/>
+  <text class="t title" x="440" y="24" text-anchor="middle">jack@github: ~</text>
+  <rect class="frame" x="1" y="1" width="878" height="268" rx="11"/>
+
+  <text class="t line l1" x="28" y="72"><tspan class="prompt">$</tspan> <tspan class="cmd">whoami</tspan></text>
+  <text class="t line l2" x="28" y="98"><tspan class="out">jack — data scientist · I build autonomous systems and keep them alive in production</tspan></text>
+
+  <text class="t line l3" x="28" y="138"><tspan class="prompt">$</tspan> <tspan class="cmd">systemctl status --user</tspan></text>
+  <text class="t line l4" x="28" y="164"><tspan class="ok">●</tspan> <tspan class="hi">blingbot</tspan><tspan class="out">    — agentic trading · live on two venues with real capital since Jun 2026</tspan></text>
+  <text class="t line l5" x="28" y="190"><tspan class="ok">●</tspan> <tspan class="hi">healthybot</tspan><tspan class="out">  — athletic intelligence · Garmin + DEXA → daily coaching</tspan></text>
+
+  <text class="t line l6" x="28" y="230"><tspan class="prompt">$</tspan> <tspan class="cursor">▍</tspan></text>
+</svg>
