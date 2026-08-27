@@ -1,9 +1,9 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <img src="assets/banner-light.svg" alt="Jack McColm, data scientist, UC Santa Barbara" width="880">
+  <img src="assets/banner-light.svg" alt="Jack McColm, data scientist" width="880">
 </picture>
 
-I studied data science at UC Santa Barbara, then spent two years building AI agents, data pipelines, and CRM automation for companies in insurance, lending, and healthcare. Outside of work I build systems that run without me: a trading system with its own account, a training coach that reads my workout data, and, most recently, a desk robot.
+Hi, I'm Jack. I studied data science at UC Santa Barbara, and since graduating I've built AI agents, data pipelines, and CRM automation for companies in insurance, lending, and healthcare. On my own time I build autonomous systems and run them for real: one trades my money, one plans my training.
 
 ## Current work: Reachy Mini
 
@@ -15,17 +15,17 @@ There is a [Reachy Mini](https://www.pollen-robotics.com/reachy-mini/) on my des
 
 <sub>Robinhood + Polymarket US · live since June 2026 · 1,679 tests · source private</sub>
 
-An agentic trading system that has run a real account without a human in the loop since June 2026. An LLM does the research and proposes trades. Deterministic code decides sizing, applies risk limits, and places orders. Most of the codebase exists to keep it safe: loss breakers, broker reconciliation, an append-only audit log, and a replay harness that tests every change against recorded history before it goes live.
+Continuous LLM research proposes trades across US equities and CFTC-regulated prediction markets; deterministic, fail-closed rails do all sizing, gating, and execution. Live with real capital since June 2026, which means the interesting work is operational: loss breakers, broker reconciliation, an append-only audit trail, replay-backed strategy changes (nothing ships on vibes), a self-curating trading universe, and watchdogs that survive the host machine literally powering itself off overnight.
 
-It grew out of two earlier research systems. robinbot ran equity factor studies with out-of-sample discipline, and polybot tested prediction-market strategies against placebo controls. Most of the popular edges failed those tests. Copy-trading, cross-venue arbitrage, and wallet-skill signals all measured smaller than the cost of trading them. What survived the testing is what runs today.
+It grew out of two earlier research systems. robinbot ran equity factor studies with out-of-sample discipline, and polybot tested prediction-market strategies against placebo controls. Most of the popular edges failed those tests. What survived the testing is what runs today.
 
-The source stays private because the account is real. The architecture and the post-mortems are things I enjoy talking about in person.
+Source is private because it trades a real account. I'm happy to walk through the architecture, the post-mortems, and the experiments that didn't survive.
 
 ### healthybot
 
 <sub>Garmin + DEXA + training logs · 240 tests</sub>
 
-I rowed varsity crew at UCSB, and this is the coach I wanted then. It pulls wearable data, DEXA scans, sleep, and training logs into daily readiness and training-load analysis. The numbers come from deterministic engines; an LLM explains them and answers questions, but never invents them.
+I rowed varsity crew at UCSB, and this is the coach I wanted then. It turns Garmin wearable data, BodySpec DEXA scans, training logs, and sleep data into daily coaching. Deterministic analysis engines compute readiness, training load, and sleep quality; an LLM orchestrator narrates and answers questions but never invents a number. Same design creed, aimed at my body instead of my portfolio.
 
 ## Other projects
 

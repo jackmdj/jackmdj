@@ -1,36 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="190" viewBox="0 0 880 190" role="img" aria-label="Jack McColm, data scientist, UC Santa Barbara">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="200" viewBox="0 0 880 200" role="img" aria-label="Jack McColm, data scientist, live systems">
+  <defs>
+    <radialGradient id="glow" cx="0.22" cy="0.35" r="0.9">
+      <stop offset="0" stop-color="#f0f4f8" stop-opacity="1"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
   <style>
-    .eyebrow {
-      font: 500 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      letter-spacing: 0.32em; fill: #6e7781;
-    }
     .name {
-      font: 400 50px 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
-      fill: #1f2328;
+      font: 700 64px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+      letter-spacing: -0.02em; fill: #14181d;
     }
-    .trace {
-      fill: none; stroke: #a06a24; stroke-width: 1.5;
-      stroke-linejoin: round; stroke-linecap: round;
-      stroke-dasharray: 1100; stroke-dashoffset: 1100;
-      animation: draw 2.4s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+    .sub {
+      font: 400 17px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+      fill: #57606a;
     }
-    .enddot {
-      fill: #a06a24; opacity: 0;
-      animation: appear 0.5s 2.7s forwards, breathe 3.2s 3.2s ease-in-out infinite;
+    .dot { fill: #1a7f37; }
+    .ripple {
+      fill: none; stroke: #1a7f37; stroke-width: 2;
+      animation: ripple 2.6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
     }
-    @keyframes draw { to { stroke-dashoffset: 0; } }
-    @keyframes appear { to { opacity: 1; } }
-    @keyframes breathe { 50% { opacity: 0.3; } }
+    @keyframes ripple {
+      0%   { r: 8px;  opacity: 0.5; }
+      70%  { r: 20px; opacity: 0; }
+      100% { r: 20px; opacity: 0; }
+    }
     @media (prefers-reduced-motion: reduce) {
-      .trace { animation: none; stroke-dashoffset: 0; }
-      .enddot { animation: none; opacity: 1; }
+      .ripple { animation: none; opacity: 0; }
     }
   </style>
-  <rect width="880" height="190" fill="#ffffff"/>
+  <rect width="880" height="200" fill="#ffffff"/>
+  <rect width="880" height="200" fill="url(#glow)"/>
 
-  <text class="eyebrow" x="42" y="52">DATA SCIENTIST · UC SANTA BARBARA</text>
-  <text class="name" x="40" y="108">Jack McColm</text>
+  <text class="name" x="40" y="106">Jack McColm</text>
+  <circle class="dot" cx="466" cy="84" r="8"/>
+  <circle class="ripple" cx="466" cy="84" r="8"/>
 
-  <path class="trace" d="M0,152 H120 L132,140 L144,158 L158,134 L170,152 L182,146 L196,152 H310 L322,156 L332,124 L342,168 L352,148 L360,152 H480 C500,152 506,136 526,136 C546,136 550,152 570,152 C590,152 594,168 614,168 C634,168 638,152 658,152 H848"/>
-  <circle class="enddot" cx="858" cy="152" r="3.5"/>
+  <text class="sub" x="43" y="148">Data scientist. I build autonomous systems and keep them alive in production.</text>
 </svg>
