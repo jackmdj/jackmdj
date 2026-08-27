@@ -7,7 +7,7 @@ Hi, I'm Jack. I studied data science at UC Santa Barbara, and since graduating I
 
 ## Current work: Reachy Mini
 
-There is a [Reachy Mini](https://www.pollen-robotics.com/reachy-mini/) on my desk and my current interest is making it useful. The first shipped build ties it into a business phone system: an incoming call fires a webhook to a relay, and the robot reacts at the desk in real time. The relay is outbound-HTTPS-only and never touches call content or customer data, which is what makes it safe to run against a real phone stack. More behavior experiments are in progress.
+There is a [Reachy Mini](https://www.pollen-robotics.com/reachy-mini/) on my desk and my current interest is making it useful. The first shipped build ties it into a business phone system: an incoming call fires a webhook to a relay, and the robot reacts at the desk in real time. More behavior experiments are in progress.
 
 ## Running live
 
@@ -15,7 +15,7 @@ There is a [Reachy Mini](https://www.pollen-robotics.com/reachy-mini/) on my des
 
 Continuous LLM research proposes trades across US equities and prediction markets; deterministic rails do all sizing, gating, and execution. Live with real capital since June 2026, which means the interesting work is operational: loss breakers, broker reconciliation, an audit trail, strategy adjustments, a self-curating trading universe, and watchdogs.
 
-The ideas grew out of two earlier research systems. I ran equity and prediction market strategy studies and tested against placebo controls. Most of the popular edges failed those tests. What survived the testing is what runs today.
+The ideas grew out of two earlier research systems. I ran equity and prediction market studies and tested against placebo controls. Most of the popular edges failed those tests. What survived the testing is what runs today.
 
 Source is private because it trades a real account.
 
