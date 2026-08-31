@@ -31,7 +31,17 @@ I rowed varsity crew at UCSB, and this is the recovery tool I wish I had. I lear
 
 **College Essay Assistant**. An AI essay-coaching product. An agent service that plans and edits alongside the student in Google Docs.
 
+## Where it started
+
+Everything above is recent and mostly private, so here is the public record: the data science work the agents and the robot grew out of.
+
 **Fog Prediction for UCSB Crew** ([research](https://github.com/jackmdj/fog_research), [app](https://github.com/jackmdj/fog_app)). Morning fog at Lake Cachuma cancels rowing practice, so I scraped weather stations and a live webcam, then trained PyTorch models to predict it the night before. My first end-to-end ML system.
+
+**Drone Detection** ([drone_detector](https://github.com/jackmdj/drone_detector)). A YOLOv11 model trained on thermal imagery to pick out drones, humans, and vehicles in low-visibility conditions, with real-time inference in mind for airspace monitoring. 0.83 precision, 0.88 recall.
+
+**Customer Behavior Prediction** ([business-ml-demo](https://github.com/jackmdj/business-ml-demo)). A complete ML pipeline in miniature: random forest models that predict when to send a customer a promotional email and which product to promote, from data generation through tuning and inference.
+
+**UCSB coursework**. Classifying [mushroom edibility](https://github.com/jackmdj/mushroom_classification) in R, [forecasting the US population](https://github.com/jackmdj/us_pop_time_series) with time series models, and [tracing world happiness](https://github.com/jackmdj/world_happiness_report) across regions before and after COVID-19.
 
 ## Contact
 
