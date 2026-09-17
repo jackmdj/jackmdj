@@ -25,7 +25,7 @@ I rowed varsity crew at UCSB, and this is the recovery tool I wish I had. I lear
 
 ## Other projects
 
-**Carbot**. A maintenance tracker for my 2012 RAV4. I photograph a shop receipt and it reads the VIN, mileage, and every line item, separating work that was performed from work that was only recommended or declined. It then finds the manufacturer's maintenance guide online and turns it into a schedule where each interval cites its source. Pure, tested reconciliation code decides what is overdue, coming soon, or unknown. The model can flag uncertainty but never writes history on its own, and a service missing from my records shows as unverified rather than never done.
+**Carbot**. A car maintenance app in development. Owners photograph their shop receipts and it reads the VIN, mileage, and every line item, separating work that was performed from work that was only recommended or declined. It identifies the vehicle, finds the manufacturer's maintenance guide online, and turns it into a schedule where each interval cites its source. Pure, tested reconciliation code decides what is overdue, coming soon, or unknown. The model can flag uncertainty but never writes history on its own, and a service missing from the records shows as unverified rather than never done. The goal is a service history any driver can build from the paperwork in their glovebox, without manual data entry.
 
 **Jarvis**. A command center that renders my projects as planets in a 3D solar system. Each planet is backed by a daemon that watches its project and reports into Discord through a central orchestrator. Unfinished, deliberately over-built.
 
