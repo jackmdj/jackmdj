@@ -7,7 +7,7 @@ Hi, I'm Jack. I studied data science at UC Santa Barbara, and since graduating I
 
 ## Current work: Reachy Mini
 
-There is a [Reachy Mini](https://www.pollen-robotics.com/reachy-mini/) on my desk and my current interest is making it useful. The first shipped build ties it into a business phone system: an incoming call fires a webhook to a relay, and the robot reacts at the desk in real time. More behavior experiments are in progress, including facial recognition and object detection.
+There is a [Reachy Mini](https://www.pollen-robotics.com/reachy-mini/) on my desk and my current interest is making it useful. The first shipped build ties it into a business phone system: an incoming call fires a webhook to a relay, and the robot reacts at the desk in real time. More behavior experiments have completed, including facial recognition and object detection. The current focus is creating seamless human-robot interactions with the help of an agentic harness called Hermes. The main hurdle is latency: I'm working to make responses and interactions occur at a natural pace. Once interaction is dynamic, I will begin integrating the robot into my daily routine through automations and skills.
 
 ## Running live
 
